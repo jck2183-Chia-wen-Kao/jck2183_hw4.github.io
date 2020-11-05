@@ -1,0 +1,44 @@
+---
+title: "jck2183 hw4 website"
+output: 
+  html_document:
+    code_folding: hide
+    toc: true
+    toc_float: true
+---
+
+# This is HW4'website
+
+This is a website for walking through basic steps on setting up a page of course p8105.
+
+<image src = "image/p8105.jpg" style = "width:75%">
+
+
+
+# Links to other websites
+
+Let's link to useful tools for data science on creating websites:
+
+* [P8105](https://p8105.com)
+* [Rstudio Guide](https://bookdown.org/yihui/rmarkdown/pkgdown.html)
+* [How to make an R Markdown website](http://nickstrayer.me/RMarkdown_Sites_tutorial/)
+* [Github page](https://pages.github.com)
+
+
+# Link to page within the site
+
+[About me](about.html)
+
+## Quarterly Results {.tabset}
+
+### By Product
+
+1st tab
+
+### By Region
+
+2nd tab
+
+# This is a New Section
+
+and it's really great.

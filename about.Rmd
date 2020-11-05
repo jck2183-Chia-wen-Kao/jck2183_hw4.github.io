@@ -1,0 +1,50 @@
+---
+title: "About me"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# This page has information about me
+
+I am a MPH student of course P8105.
+
+## EDUCATION
+#### *COLUMBIA UNIVERSITY MAILMAN SCHOOL OF PUBLIC HEALTH, New York, NY*
+- Master of Public Health (MPH), Epidemiology, expected May 2021
+
+#### *TAIPEI MEDICAL UNIVERSITY (TMU), TAIWAN, Taipei, Taiwan*
+- Bachelor in Health Care Administration, received June 2015. 
+- GPA: 3.82/4.0, 2012 Scholarship
+
+## RELEVANT EXPERIENCE
+#### *National Yang-Ming University*          
+
+Taipei Taiwan\
+*Research Assistant, Aging Healthcare Research Center*\
+Mar.2018- Mar.2019\
+
+- Managed program evaluation data over 1,200 records from respective health centers and clinics, and maintained contact 5 times over 2 years, ensuring accuracy of contact information.
+
+- Analyzed program statistics and created compelling data visualization for internal and external publication, including graphs, charts, and other graphics with SPSS. 
+
+- Followed up with program participants, increasing participation rate by 20%.
+
+- Assisted with international events and meetings, resulting in ongoing expansion of international partnership.
+
+
+#### *P&G Taiwan Ltd.*  
+Taipei Taiwan\
+*Marketing Technical Assistant*\                              
+Sept. 2015 - Nov. 2016\
+
+- Maintained Marketing Projects for 3 brands in Taiwan-- Olay, Gillette, and Braun.
+- Conducted marketing tasks assigned by managers, successfully promoted the sales of Gillette in Taiwan.
+- Assisted with logistics for marketing events and campaigns in a fast-paced, high-volume environment. Provided high quality of products to clients.
+
+## SKILLS AND INTEREST
+
+- Data Science Skills: SAS, SPSS, Mac iOS, Windows 10, R, Python
+- Languages: Native in Mandarin, Fluent in English (TOEFL: 105/120), Fluent in Japanese (JLPT: N1), Basic in German(B1)
+
