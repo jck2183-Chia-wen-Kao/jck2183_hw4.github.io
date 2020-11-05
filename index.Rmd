@@ -13,7 +13,14 @@ This is a website for walking through basic steps on setting up a page of course
 
 <image src = "image/p8105.jpg" style = "width:75%">
 
+## About me
 
+* [About me](about.html)
+
+# Let's play around with the dataset with dashboard!
+
+* [Plotly](plotly.html)
+* [Dashboard](dashboard.html)
 
 # Links to other websites
 
@@ -23,22 +30,9 @@ Let's link to useful tools for data science on creating websites:
 * [Rstudio Guide](https://bookdown.org/yihui/rmarkdown/pkgdown.html)
 * [How to make an R Markdown website](http://nickstrayer.me/RMarkdown_Sites_tutorial/)
 * [Github page](https://pages.github.com)
+* [My Github Page](https://github.com/jck2183-Chia-wen-Kao/jck2183_hw4.github.io)
 
 
-# Link to page within the site
 
-[About me](about.html)
 
-## Quarterly Results {.tabset}
 
-### By Product
-
-1st tab
-
-### By Region
-
-2nd tab
-
-# This is a New Section
-
-and it's really great.

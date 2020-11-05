@@ -14,19 +14,21 @@ library(plotly)
 ```
 
 ```{r}
-data("nyc_airbnb")
-
-nyc_airbnb <-
-    nyc_airbnb %>% 
-    mutate(rating = review_scores_location / 2) %>% 
-    select(neighbourhood_group, neighbourhood, 
-           rating, price, room_type, lat, long) %>% 
-    filter(
-        neighbourhood_group == "Manhattan", 
-        price %in% 100:500,
-        room_type == "Entire home/apt"
-    ) %>% 
-    drop_na(rating) 
+weather_df = 
+  rnoaa::meteo_pull_monitors(
+    c("USW00094728", "USC00519397", "USS0023B17S"),
+    var = c("PRCP", "TMIN", "TMAX"), 
+    date_min = "2017-01-01",
+    date_max = "2017-12-31") %>%
+  mutate(
+    name = recode(
+      id, 
+      USW00094728 = "CentralPark_NY", 
+      USC00519397 = "Waikiki_HA",
+      USS0023B17S = "Waterhole_WA"),
+    tmin = tmin / 10,
+    tmax = tmax / 10) %>%
+  select(name, id, everything()) 
 ```
 Column {data-width=650}
 -----------------------------------------------------------------------
@@ -34,13 +36,14 @@ Column {data-width=650}
 ### Chart A
 
 ```{r}
-nyc_airbnb %>% 
-  mutate(text_label = str_c("Price : $", price, 
-                            "\nRaing: ", rating)) %>% 
-  plot_ly(
-    x = ~lat, y = ~long, color = ~price, alpha = .5, 
-          text = ~text_label, 
-    type = "scatter", mode = "markers") 
+weather_df %>% 
+    mutate(text_label = str_c(
+        "Location : ", name, 
+        "\nprecipitation: ", prcp)) %>% 
+    plot_ly(x = ~tmin, y = ~tmax, color = ~name, 
+    colors = "viridis", 
+    alpha = .5, text = ~text_label, 
+    type = "scatter", mode = "markers")
 ```
 
 Column {data-width=350}
@@ -50,20 +53,31 @@ Column {data-width=350}
 
 ```{r}
 library(forcats)
-nyc_airbnb %>% 
-  mutate(neighbourhood = fct_reorder(neighbourhood, price)) %>% 
-  plot_ly(y = ~price, x = ~neighbourhood, color = ~neighbourhood, 
-          type = "box", colors = "viridis")
+weather_df %>% 
+  mutate(name = fct_reorder(name, prcp)) %>% 
+  plot_ly(y = ~prcp, x = ~name, color = ~name, 
+          type = "violin", colors = "viridis")
 ```
 
 ### Chart C
 
 ```{r}
-nyc_airbnb %>% 
-  count(neighbourhood) %>% 
-  mutate(neighbourhood = fct_reorder(neighbourhood, n)) %>% 
-  plot_ly(x = ~neighbourhood, y = ~n, 
-          color = ~neighbourhood, type = "bar", 
-          colors = "viridis")
+ggp_smooth <-
+  weather_df %>% 
+  ggplot(aes(x = tmin, y = tmax, color = name)) +
+  geom_point() +
+  geom_smooth() + labs(
+    title = "Temperature plot",
+    x = "Minimum daily temperature (C)",
+    y = "Maxiumum daily temperature (C)",
+    caption = "Data from the rnoaa package"
+  ) + 
+  viridis::scale_color_viridis(
+    name = "Location", 
+    discrete = TRUE
+  )
+
+
+ggplotly(ggp_smooth)
 ```
 
